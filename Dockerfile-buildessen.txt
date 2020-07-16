@@ -1,0 +1,12 @@
+FROM ubuntu:18.04
+
+LABEL maintainer='Arvind Awasthi'
+
+LABEL maintainer_id='awasthiarvind1997@gmail.com'
+
+RUN apt-get update
+
+RUN apt-get update && apt-get install build-essential -y
+
+CMD /bin/bash
+
