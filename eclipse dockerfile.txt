@@ -1,0 +1,39 @@
+FROM ubuntu:18.04
+
+LABEL maintainer='Arvind Awasthi'
+
+LABEL maintainer_id='awasthiarvind1997@gmail.com'
+
+LABEL app_description='Installation Of Eclipse-IDE'
+
+RUN apt-get update
+
+RUN apt-get upgrade -y
+
+#After downloading the eclipse package into our system
+#In terminal move to that folder/directory
+
+RUN ls
+
+RUN eclipse-inst-linux64.tar.gz
+
+RUN eclipse-installer
+
+#Check the tar.gz file available in list
+
+#After extracting check the eclipse-installer in same folder/directory
+
+RUN ls
+
+#Change directory or folder further into eclipse-installer
+
+RUN eclipse-installer
+
+WORKDIR /home/ubuntu/
+
+EXPOSE 8080/tcp
+
+CMD /bin/bash
+
+
+

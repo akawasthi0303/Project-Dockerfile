@@ -1,0 +1,26 @@
+FROM ubuntu:18.04
+
+LABEL maintainer_name "Arvind Awasthi"
+
+LABEL maintainer_email "awasthiarvind1997@gmail.com"
+
+RUN apt-get -y update && apt-get -y upgrade
+
+RUN apt install -y wget \
+vim \ 
+nmap
+
+RUN apt install -y default-jdk
+
+RUN mkdir /usr/local/tomcat
+
+RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.37/bin/apache-tomcat-9.0.37.tar.gz -O /tmp/tomcat.tar.gz
+
+RUN cd /tmp && tar xvfz tomcat.tar.gz
+
+RUN cp -Rv /tmp/apache-tomcat-9.0.37 /usr/local/tomcat
+
+EXPOSE 8080
+
+ENTRYPOINT /bin/bash
+
